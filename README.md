@@ -11,16 +11,18 @@ You've been provided with four files which contain declrations and definitions f
 * Iterator: this is the base class for definint the interface for all the other iterator classes
 * NullIterator: this iterator is created by expression tree classes which have no children to iterator over such as the operands
 * BinaryIterator: this iterator is created by expression tree classes with two children, such as operators, and returns one of the children per iteration
-* UnaryIterator: this iterator is created by expression tree classes with one child, such as decorators, and returns the only child on its first iteration
+* UnaryIterator: this iterator is created by expression tree classes with one child, such as decorators, and returns the only child on its first iteration 
 * PreorderIterator: this iterator is created by a user to traverse an entire expression tree. Note that it will skip the first node in the expression tree so its helpful to add a "dummy" decorator node as root which will be skipped
 
-These classes are declared in the file `iterator.hpp` but defined in other fils with the exception of the `Iterator` and `NullIterator` classes, which are both declared and defined in `iterator.hpp`. The first step of this lab is to modify your existing expression tree classes to work with these iterators. You will need to perform the following steps to integrate these iterator classes with your expression tree objects to allow your tree to be iterated:
+``NOTE- You will not be using the *UnaryIterator* for this lab as we did not use the decorator pattern in our labs.``
+
+These classes are declared in the file `iterator.hpp` but defined in other files with the exception of the `Iterator` and `NullIterator` classes, which are both declared and defined in `iterator.hpp`. The first step of this lab is to modify your existing expression tree classes to work with these iterators. You will need to perform the following steps to integrate these iterator classes with your expression tree objects to allow your tree to be iterated:
 
 * Add a pure virtual `Iterator* create_iterator()` function to your `Base` class
 * Declare and define an appropriate `Iterator* create_iterator()` function for each of your `Base` subclasses
 * Add pure virtual `Base* get_left()` and `Base* get_right()` functions to your `Base` class
 * Declare and define `get_left()` and `get_right()` functions for each of your `Base` subclasses (some of these will necessarily return `nullptr`)
-* Make sure that each class is returning the correct type of iterator (Null, Binary, or Unary) and that the iterator is initialized (using its constructor) for that object before its returned
+* Make sure that each class is returning the correct type of iterator (Null or Binary) and that the iterator is initialized (using its constructor) for that object before its returned
 
 Before moving on to the visitor portion of this lab, make sure to create a number of unit tests to make sure you are correctly iterating over every node in various expression trees. If you do not test your iteratior before attempting to use it with your visitor you will likely get difficult to debug results or segmentation faults. 
 
@@ -38,12 +40,6 @@ class CountVisitor {
         int sub;
         int pow;
        
-        // Decorator Pattern Tracking Members
-        int ceil;
-        int floor;
-        ...
-        int trunc;
-        int paren;
 
     public:
         CountVisitor();
@@ -59,16 +55,6 @@ class CountVisitor {
         void visit_pow();
         int pow_count();
 
-        // Decorator Pattern Visit Functions
-        void visit_ceil();
-        int ceil_count();
-        void visit_floor();
-        int floor_count();
-        ...
-        void visit_trunc();
-        int trunc_count();
-        void visit_paren();
-        int paren_count();
 };
 ```
 
