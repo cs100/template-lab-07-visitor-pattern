@@ -38,19 +38,6 @@ class BinaryIterator : public Iterator {
         Base* current();
 };
 
-class UnaryIterator : public Iterator {
-    protected:
-        ChildIndicator c;
-
-    public:
-        UnaryIterator(Base* ptr);
-
-        void first();
-        void next();
-        bool is_done();
-        Base* current();
-};
-
 class NullIterator : public Iterator {
     public:
         NullIterator(Base* ptr) : Iterator(ptr) {}
