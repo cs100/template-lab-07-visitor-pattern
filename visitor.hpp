@@ -10,12 +10,6 @@ class CountVisitor{
         int add;
         int sub;
         int pow;
-        
-        int ceil;
-        int floor;
-        int abs;
-        int trunc;
-        int paren;
 
     public:
         CountVisitor();
@@ -35,16 +29,6 @@ class CountVisitor{
         void visit_pow();
         int pow_count();
 
-        void visit_ceil();
-        int ceil_count();
-        void visit_floor();
-        int floor_count();
-        void visit_abs();
-        int abs_count();
-        void visit_trunc();
-        int trunc_count();
-        void visit_paren();
-        int paren_count();
 };
 
 #endif //__COUNT_VISITOR_HPP__
