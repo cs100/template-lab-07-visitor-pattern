@@ -6,15 +6,15 @@
 
 ## Iterator Class
 
-You've been provided with four files which contain declrations and definitions for the following five iterator classes:
+You've been provided with four files which contain declarations and definitions for the following five iterator classes:
 
-* Iterator: this is the base class for definint the interface for all the other iterator classes
-* NullIterator: this iterator is created by expression tree classes which have no children to iterator over such as the operands
+* Iterator: this is the base class for defining the interface for all the other iterator classes
+* NullIterator: this iterator is created by expression tree classes which have no children to iterate over such as the operands
 * BinaryIterator: this iterator is created by expression tree classes with two children, such as operators, and returns one of the children per iteration
 * UnaryIterator: this iterator is created by expression tree classes with one child, such as decorators, and returns the only child on its first iteration 
 * PreorderIterator: this iterator is created by a user to traverse an entire expression tree. Note that it will skip the first node in the expression tree so its helpful to add a "dummy" node as root which will be skipped
 
-``NOTE- You will not be using the `UnaryIterator` for this lab as they are used by the decorator pattern which we haven't not yet covered.``
+``NOTE- You will not be using the `UnaryIterator` for this lab as they are used by the decorator pattern which we haven't yet covered.``
 
 These classes are declared in the file `iterator.hpp` but defined in other files with the exception of the `Iterator` and `NullIterator` classes, which are both declared and defined in `iterator.hpp`. The first step of this lab is to modify your existing expression tree classes to work with these iterators. You will need to perform the following steps to integrate these iterator classes with your expression tree objects to allow your tree to be iterated:
 
