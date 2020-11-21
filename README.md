@@ -14,7 +14,7 @@ You've been provided with four files which contain declrations and definitions f
 * UnaryIterator: this iterator is created by expression tree classes with one child, such as decorators, and returns the only child on its first iteration 
 * PreorderIterator: this iterator is created by a user to traverse an entire expression tree. Note that it will skip the first node in the expression tree so its helpful to add a "dummy" node as root which will be skipped
 
-``NOTE- You will not be using the `UnaryIterator` for this lab as they are used by the decorator pattern which is not covered in this course.``
+``NOTE- You will not be using the `UnaryIterator` for this lab as they are used by the decorator pattern which we haven't not yet covered in this course.``
 
 These classes are declared in the file `iterator.hpp` but defined in other files with the exception of the `Iterator` and `NullIterator` classes, which are both declared and defined in `iterator.hpp`. The first step of this lab is to modify your existing expression tree classes to work with these iterators. You will need to perform the following steps to integrate these iterator classes with your expression tree objects to allow your tree to be iterated:
 
