@@ -24,7 +24,7 @@ These classes are declared in the file `iterator.hpp` but defined in other files
 * Declare and define `get_left()` and `get_right()` functions for each of your `Base` subclasses (some of these will necessarily return `nullptr`)
 * Make sure that each class is returning the correct type of iterator (Null or Binary) and that the iterator is initialized (using its constructor) for that object before its returned
 
-Before moving on to the visitor portion of this lab, make sure to create a number of unit tests to make sure you are correctly iterating over every node in various expression trees. If you do not test your iteratior before attempting to use it with your visitor you will likely get difficult to debug results or segmentation faults. 
+Before moving on to the visitor portion of this lab, make sure to create a number of unit tests to make sure you are correctly iterating over every node in various expression trees. If you do not test your iterator before attempting to use it with your visitor it will likely get difficult to debug results or segmentation faults. 
 
 ## The Visitor Class
 
